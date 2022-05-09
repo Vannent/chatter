@@ -1,0 +1,30 @@
+@import "./colors";
+@import "./mixins";
+
+.channel-list__sidebar {
+  width: 5vw;
+  height: 100%;
+  background-color: $accent-color;
+  box-shadow: 0px 0px 10px rgba(112, 112, 112, 0.459);
+
+  .channel-list__icon1,
+  .channel-list__icon2 {
+    color: $background-color;
+  }
+}
+
+.channel-list__list__wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 20vw;
+  height: 100%;
+  border-top-right-radius: 3px;
+  background-color: $secondary-accent-color;
+
+  .channel-list__header__text {
+    font-weight: bold;
+    padding: 10px;
+    color: $background-color;
+    font-size: 1.3rem;
+  }
+}

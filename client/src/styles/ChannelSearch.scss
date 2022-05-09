@@ -1,0 +1,37 @@
+@import "./colors";
+@import "./mixins";
+
+.channel-search__container {
+  position: relative;
+  @include flex-center();
+  justify-content: center;
+
+  .channel-search__input__wrapper {
+    @include flex-center();
+    height: 40px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    width: 95%;
+  }
+
+  .channel-search__input__wrapper:focus-within {
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.13);
+  }
+
+  .channel-search__input__icon {
+    @include flex-center();
+    color: $background-color;
+    margin-left: 5px;
+    opacity: 70%;
+  }
+
+  .channel-search__input__text {
+    background: none;
+    border: none;
+    color: $background-color;
+    font-size: 1.1rem;
+    outline: none;
+    font-weight: 600;
+    overflow: hidden;
+  }
+}
