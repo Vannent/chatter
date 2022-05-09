@@ -26,8 +26,16 @@
     transition: 0.8s ease;
     border-radius: 10px;
 
-    height: 55vh;
+    min-height: 55vh;
     width: 55vw;
+
+    button {
+      background-color: $accent-color;
+      color: $background-color;
+      font-weight: 600;
+      letter-spacing: 0.8px;
+      margin-bottom: 0.8rem;
+    }
 
     p {
       font-size: 2rem;
