@@ -2,14 +2,32 @@ import React, { useState } from "react";
 import Cookies from "universal-cookie";
 import "../styles/Auth.scss";
 import axios from "axios";
+import { Button } from "@material-ui/core";
+
+const initialState = {
+  fullName: "",
+  username: "",
+  password: "",
+  confirmPassword: "",
+  phoneNumber: "",
+  avatarURL: "",
+};
 
 const Auth = () => {
+  const [form, setForm] = useState(initialState);
   const [isSignUp, setisSignUp] = useState(true);
 
-  const handleChange = () => {};
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
 
   const switchMode = () => {
     setisSignUp((prevIsSignUp) => !prevIsSignUp);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(form);
   };
 
   return (
@@ -17,7 +35,7 @@ const Auth = () => {
       <div className="auth__form-container_fields">
         <div className="auth__form-container_fields-content">
           <p>{isSignUp ? "Sign Up" : "Sign In"}</p>
-          <form onSubmit={() => {}}>
+          <form onSubmit={handleSubmit}>
             {isSignUp && (
               <div className="auth__form-container_field-content_input">
                 <label htmlFor="fullName">Full Name</label>
@@ -86,6 +104,11 @@ const Auth = () => {
                 />
               </div>
             )}
+            <div className="auth__form-container_field-content_button">
+              <Button variant="contained" type="submit">
+                {isSignUp ? "Sign Up" : "Sign In"}
+              </Button>
+            </div>
           </form>
           <div className="auth__form-container_field-account">
             <p>
