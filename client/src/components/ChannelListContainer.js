@@ -29,7 +29,13 @@ const ChatterHeader = () => (
   </div>
 );
 
-const ChannelListContainer = () => {
+const ChannelListContainer = ({
+  isCreating,
+  setIsCreating,
+  setCreateType,
+  setIsEditing,
+  setToggleContainer,
+}) => {
   const logout = () => {
     cookies.remove("token");
     cookies.remove("userId");
@@ -51,19 +57,49 @@ const ChannelListContainer = () => {
         <ChannelList
           filters={{}}
           channelRenderFilterFn={() => {}}
-          List={(listProps) => <TeamChannelList {...listProps} type="team" />}
+          List={(listProps) => (
+            <TeamChannelList
+              {...listProps}
+              type="team"
+              isCreating={isCreating}
+              setIsCreating={setIsCreating}
+              setCreateType={setCreateType}
+              setIsEditing={setIsEditing}
+              setToggleContainer={setToggleContainer}
+            />
+          )}
           Preview={(previewProps) => (
-            <TeamChannelPreview {...previewProps} type="team" />
+            <TeamChannelPreview
+              {...previewProps}
+              type="team"
+              setIsCreating={setIsCreating}
+              setIsEditing={setIsEditing}
+              setToggleContainer={setToggleContainer}
+            />
           )}
         />
         <ChannelList
           filters={{}}
           channelRenderFilterFn={() => {}}
           List={(listProps) => (
-            <TeamChannelList {...listProps} type="messaging" />
+            <TeamChannelList
+              {...listProps}
+              type="messaging"
+              isCreating={isCreating}
+              setIsCreating={setIsCreating}
+              setCreateType={setCreateType}
+              setIsEditing={setIsEditing}
+              setToggleContainer={setToggleContainer}
+            />
           )}
           Preview={(previewProps) => (
-            <TeamChannelPreview {...previewProps} type="messaging" />
+            <TeamChannelPreview
+              {...previewProps}
+              type="messaging"
+              setIsCreating={setIsCreating}
+              setIsEditing={setIsEditing}
+              setToggleContainer={setToggleContainer}
+            />
           )}
         />
       </div>
