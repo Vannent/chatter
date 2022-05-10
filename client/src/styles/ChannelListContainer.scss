@@ -27,4 +27,10 @@
     color: $background-color;
     font-size: 1.3rem;
   }
+
+  .str-chat.str-chat-channel-list.messaging.light {
+    background-color: transparent;
+    min-height: 20vh;
+    max-height: 30vh;
+  }
 }

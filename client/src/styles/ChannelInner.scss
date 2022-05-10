@@ -1,0 +1,67 @@
+@import "./colors";
+@import "./mixins";
+
+.str-chat-channel {
+  max-height: 100vh;
+  max-width: 76vw;
+
+  .str-chat__container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-right: 0 !important;
+
+    .str-chat__main-panel,
+    .str-chat-angular__main-panel-inner {
+      height: 100%;
+      width: 100%;
+      min-width: 250px;
+      display: flex !important;
+      flex-direction: column;
+      flex: 1;
+
+      .team-channel-header__container {
+        @include flex-center();
+        justify-content: space-between;
+        background-color: white;
+        display: flex;
+        width: 76vw;
+        padding: 10px;
+        margin-bottom: 10px;
+        box-shadow: 0px 0px 10px rgba(112, 112, 112, 0.26);
+        .str-chat {
+          color: $font-color !important;
+        }
+
+        .team-channel-header__channel-wrapper {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+
+          span {
+            opacity: 90%;
+          }
+
+          span:hover {
+            color: $accent-color;
+          }
+
+          .team-channel-header__name {
+            font-size: 1.3rem;
+            font-weight: bolder;
+          }
+        }
+        .team-channel-header__right {
+          .team-channel-header__right-text {
+            font-weight: 600;
+            font-size: 0.8rem;
+            letter-spacing: 0.5px;
+            opacity: 70%;
+            margin-right: 5px;
+          }
+        }
+      }
+    }
+  }
+}

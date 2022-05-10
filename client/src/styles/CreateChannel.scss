@@ -1,0 +1,45 @@
+@import "./colors";
+@import "./mixins";
+
+.create-channel__container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  .create-channel__header {
+    @include flex-center();
+    justify-content: space-between;
+    @include box-shadow-background();
+
+    p {
+      margin-left: 15px;
+      font-weight: bold;
+    }
+  }
+
+  .channel-name-input__wrapper {
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+
+    p {
+      margin-top: 20px;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+    }
+
+    input {
+      background-color: $background-color;
+      border-style: none;
+      width: 90%;
+      height: 5vh;
+      border-radius: 25px;
+      padding: 5px 15px;
+      margin-top: 10px;
+    }
+
+    input:focus {
+      @include box-shadow-secondary();
+    }
+  }
+}
