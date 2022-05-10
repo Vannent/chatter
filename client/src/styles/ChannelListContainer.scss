@@ -47,7 +47,7 @@
     .channel-preview__item-single {
       @include flex-center();
       padding: 0px 10px;
-      margin-bottom: 10px;
+      margin-bottom: 5px;
 
       .str-chat__avatar-fallback {
         background-color: $background-color;
@@ -63,6 +63,7 @@
     .channel-preview__item-single {
       @include flex-center();
       padding: 0px 10px;
+      margin-bottom: 5px;
 
       .str-chat__avatar-fallback {
         background-color: $background-color;
