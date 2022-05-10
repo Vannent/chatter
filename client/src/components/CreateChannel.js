@@ -60,8 +60,12 @@ const CreateChannel = ({ createType, setIsCreating }) => {
             ? "Create a New Channel"
             : "Send a Direct Message"}
         </p>
-        <IconButton>
-          <Close setIsCreating={setIsCreating} fontSize="small" />
+        <IconButton
+          onClick={() => {
+            if (setIsCreating) setIsCreating(false);
+          }}
+        >
+          <Close fontSize="small" />
         </IconButton>
       </div>
       {createType === "team" && (
