@@ -1,0 +1,44 @@
+@import "./colors";
+@import "./mixins";
+
+.user-list__container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  .user-list__header {
+    @include flex-center();
+    justify-content: space-between;
+    margin: 5px 30px;
+    font-weight: 500;
+  }
+
+  .user-item__wrapper {
+    @include flex-center();
+    margin: 0px 25px;
+    justify-content: space-between;
+
+    .str-chat__avatar-fallback {
+      background-color: $accent-color;
+    }
+
+    .user-item__name-wrapper {
+      @include flex-center();
+      flex: 2;
+      text-align: left;
+
+      p {
+        font-weight: 600;
+        letter-spacing: 0.3px;
+        color: $font-color;
+      }
+    }
+  }
+  .user-item__wrapper:hover {
+    background: #f7f6f8;
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 1px;
+    transition: 0.8s ease;
+  }
+}
