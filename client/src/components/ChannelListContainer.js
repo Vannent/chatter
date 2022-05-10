@@ -6,14 +6,16 @@ import { ExitToApp, Group } from "@material-ui/icons";
 import "../styles/ChannelListContainer.scss";
 import { IconButton } from "@material-ui/core";
 
-const SideBar = () => (
+const cookies = new Cookies();
+
+const SideBar = ({ logout }) => (
   <div className="channel-list__sidebar">
     <IconButton className="channel-list__icon1">
       <Group />
     </IconButton>
     <div className="channel-list__icon2">
       <div className="icon2__inner">
-        <IconButton className="channel-list__icon2">
+        <IconButton className="channel-list__icon2" onClick={logout}>
           <ExitToApp />
         </IconButton>
       </div>
@@ -28,9 +30,21 @@ const ChatterHeader = () => (
 );
 
 const ChannelListContainer = () => {
+  const logout = () => {
+    cookies.remove("token");
+    cookies.remove("userId");
+    cookies.remove("username");
+    cookies.remove("fullName");
+    cookies.remove("avatarURL");
+    cookies.remove("hashedPassword");
+    cookies.remove("phoneNumber");
+
+    window.location.reload();
+  };
+
   return (
     <>
-      <SideBar />
+      <SideBar logout={logout} />
       <div className="channel-list__list__wrapper">
         <ChatterHeader />
         <ChannelSearch />
