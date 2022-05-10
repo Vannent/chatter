@@ -6,6 +6,20 @@
   flex-direction: column;
   height: 100%;
 
+  .edit-channel__button-wrapper {
+    @include flex-center();
+    width: 100%;
+    justify-content: center;
+
+    button {
+      background-color: $accent-color;
+      color: $background-color;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+      margin-bottom: 30px;
+    }
+  }
+
   .edit-channel__header {
     @include flex-center();
     justify-content: space-between;

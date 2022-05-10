@@ -3,7 +3,7 @@ import { useChatContext } from "stream-chat-react";
 import { UserList } from "./";
 import { Close } from "@material-ui/icons";
 import "../styles/EditChannel.scss";
-import { IconButton } from "@material-ui/core";
+import { Button, IconButton } from "@material-ui/core";
 
 const ChannelNameInput = ({ channelName = "", setChannelName }) => {
   const handleChange = (event) => {
@@ -69,7 +69,9 @@ const EditChannel = ({ setIsEditing }) => {
       />
       <UserList setSelectedUsers={setSelectedUsers} />
       <div className="edit-channel__button-wrapper" onClick={updateChannel}>
-        <p>Save Changes</p>
+        <Button variant="contained">
+          <p>Save Changes</p>
+        </Button>
       </div>
     </div>
   );
