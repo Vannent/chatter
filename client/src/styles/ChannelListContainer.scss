@@ -30,8 +30,10 @@
 
   .str-chat.str-chat-channel-list.messaging.light {
     background-color: transparent;
-    min-height: 20vh;
+    min-height: 10vh;
+    height: 15%;
     max-height: 30vh;
+    width: fit-content !important;
   }
 
   .channel-preview__wrapper__selecter {
