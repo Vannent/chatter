@@ -3,4 +3,4 @@
 
 [Live Preview](https://chatter-appl.netlify.app/)
 
-App created with React, SASS, Node.js, Express and Stream Chat API.
+App created with React, SCSS, Node.js, Express and Stream Chat API.
